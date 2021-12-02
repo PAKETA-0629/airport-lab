@@ -9,7 +9,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "regular_clients")
-public class RegularClient {
+public class Account {
 
 
     @Id

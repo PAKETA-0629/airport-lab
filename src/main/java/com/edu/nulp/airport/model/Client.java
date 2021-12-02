@@ -9,7 +9,7 @@ import java.util.Date;
 @Data
 @Entity
 @Table(name = "personal_information")
-public class PersonalInformation {
+public class Client {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,5 +27,5 @@ public class PersonalInformation {
     @OneToOne
     @JoinColumn(name = "account_id", referencedColumnName = "id")
     @ToString.Exclude
-    private RegularClient regularClient;
+    private Account account;
 }
