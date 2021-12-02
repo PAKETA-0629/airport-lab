@@ -1,11 +1,9 @@
 package com.edu.nulp.airport.model;
 
 import lombok.Data;
+import lombok.ToString;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Data
 @Entity
@@ -13,13 +11,16 @@ import javax.persistence.Table;
 public class User {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "email")
     private String email;
     @Column(name = "password")
     private String password;
-    @Column(name = "role_id")
-    private Long roleId;
+    @ManyToOne
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
+    @ToString.Exclude
+    private Role role;
     @Column(name = "is_active")
     private Boolean isActive;
 }
