@@ -1,7 +1,6 @@
 package com.edu.nulp.airport.model;
 
 import lombok.Data;
-import com.edu.nulp.airport.model.City;
 import lombok.ToString;
 
 import javax.persistence.*;
@@ -9,7 +8,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name = "airports")
-public class Airports {
+public class Airport {
 
     @Id
     private Long id;
