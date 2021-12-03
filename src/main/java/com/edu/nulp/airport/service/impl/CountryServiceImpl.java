@@ -15,6 +15,7 @@ public class CountryServiceImpl implements CountryService {
 
     private final CountryRepository countryRepository;
 
+    @Autowired
     public CountryServiceImpl(CountryRepository countryRepository) {
         this.countryRepository = countryRepository;
     }
