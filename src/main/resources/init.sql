@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 TRUNCATE TABLE ordered_tickets;
 TRUNCATE TABLE flights;
 TRUNCATE TABLE planes;
@@ -12,8 +11,6 @@ TRUNCATE TABLE managers;
 TRUNCATE TABLE regular_clients;
 TRUNCATE TABLE personal_information;
 
-=======
->>>>>>> 0b4a0aa621d442ae0798f2bf3059bd603a7fb964
 INSERT INTO roles(name)
 VALUES ('ROLE_CLIENT'),
        ('ROLE_MANAGER'),
