@@ -1,5 +1,6 @@
 package com.edu.nulp.airport.service.impl;
 
+import com.edu.nulp.airport.exception.NotExistException;
 import com.edu.nulp.airport.model.Country;
 import com.edu.nulp.airport.repository.CountryRepository;
 import com.edu.nulp.airport.service.CountryService;
@@ -24,8 +25,8 @@ public class CountryServiceImpl implements CountryService {
     public Country findByName(String name) {
         Optional<Country> optionalCountry = countryRepository.findByName(name);
         if (!optionalCountry.isPresent()) {
-            //todo add exception and handler exception
             log.debug("Country Not Exits");
+            throw new NotExistException("Country not exist by name: " + name);
         }
         return optionalCountry.get();
     }
