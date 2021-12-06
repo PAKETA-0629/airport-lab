@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 public class CountryController {
 
@@ -20,5 +22,10 @@ public class CountryController {
     @GetMapping("/country/{name}")
     public Country getCountryByName(@PathVariable("name") String name) {
         return countryService.findByName(name);
+    }
+
+    @GetMapping("/countries")
+    public List<Country> getAllCountries() {
+        return countryService.findAll();
     }
 }
