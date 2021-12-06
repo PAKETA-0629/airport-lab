@@ -8,6 +8,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -29,5 +30,10 @@ public class CountryServiceImpl implements CountryService {
             throw new NotExistException("Country not exist by name: " + name);
         }
         return optionalCountry.get();
+    }
+
+    @Override
+    public List<Country> findAll() {
+        return countryRepository.findAll();
     }
 }
